@@ -1,0 +1,35 @@
+<!doctype html><html lang="pt-br"><head><meta charset="utf-8">
+<title>Verificar certificado — Raciocínio Ventilatório em Pediatria</title>
+<style>
+body{font-family:Georgia,serif;background:#F7F5F0;color:#1B2A33;margin:0;
+  display:flex;min-height:100vh;align-items:center;justify-content:center}
+.caixa{max-width:520px;padding:48px;background:#fff;border:2px solid #0B2545;
+  border-radius:4px;text-align:center;margin:24px}
+h1{color:#0B2545;font-size:22px;margin:0 0 24px}
+.marca{color:#B88600;font-size:12px;letter-spacing:2px;font-weight:bold;margin-bottom:16px}
+.ok{color:#2E7D32;font-size:40px;margin:0}
+.erro{color:#B3261E;font-size:40px;margin:0}
+.dado{font-size:15px;margin:6px 0}
+.dado b{color:#0B2545}
+input,button{font-size:16px;padding:10px;font-family:Georgia,serif}
+input{width:70%;border:1px solid #ccc;border-radius:4px}
+button{background:#0B2545;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-left:8px}
+img.qr{width:140px;height:140px;margin-top:16px}
+.rodape{font-size:11px;color:#5B6B73;margin-top:24px}
+</style></head><body><div class="caixa">
+<div class="marca">RACIOCÍNIO VENTILATÓRIO EM PEDIATRIA</div>
+<h1>Verificar certificado</h1>
+<p>Digite o código impresso no certificado (formato RVP-XXXXXXXX):</p>
+<input id="codigo" placeholder="RVP-XXXXXXXX" autofocus>
+<button onclick="ir()">Verificar</button>
+<p class="rodape">A busca acontece no seu navegador — nenhum dado é enviado a lugar nenhum.</p>
+</div>
+<script>
+function ir(){
+  var c = document.getElementById('codigo').value.trim().toUpperCase();
+  if (c) window.location.href = 'verificar/' + encodeURIComponent(c) + '.html';
+}
+document.getElementById('codigo').addEventListener('keydown', function(e){
+  if (e.key === 'Enter') ir();
+});
+</script></body></html>
